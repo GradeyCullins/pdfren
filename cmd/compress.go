@@ -18,9 +18,9 @@ var (
 	isEstimate       bool
 
 	rootCmd = &cobra.Command{
-		Use:   "pdffren",
-		Short: "pdffren compresses your PDF using Adobe's online PDF compressor tool",
-		Long:  "pdffren compresses your PDF using Adobe's online PDF compressor tool",
+		Use:   "pdfren",
+		Short: "pdfren compresses your PDF using Adobe's online PDF compressor tool",
+		Long:  "pdfren compresses your PDF using Adobe's online PDF compressor tool",
 		Run: func(cmd *cobra.Command, args []string) {
 			RunScraper()
 		},
