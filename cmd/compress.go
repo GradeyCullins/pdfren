@@ -150,11 +150,12 @@ func RunCompressor(file *os.File, outPath string) {
 	if err := chromedp.Run(ctx,
 		chromedp.WaitVisible(downloadBtn, chromedp.NodeVisible),
 		chromedp.WaitEnabled(downloadBtn, chromedp.NodeEnabled),
+		//chromedp.Sleep(time.Second*1),
 		browser.
 			SetDownloadBehavior(browser.SetDownloadBehaviorBehaviorAllowAndName).
 			WithDownloadPath(wd).
 			WithEventsEnabled(true),
-		chromedp.Click(downloadBtn, chromedp.NodeEnabled),
+		chromedp.Click(downloadBtn, chromedp.NodeReady),
 	); err != nil {
 		log.Fatal().Msg(err.Error())
 	}
